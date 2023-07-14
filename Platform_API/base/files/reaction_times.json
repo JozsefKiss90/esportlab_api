@@ -1,0 +1,102 @@
+[
+    {
+        "rt": 979,
+        "email": "user_0@example.com",
+        "acc": 100
+    },
+    {
+        "rt": 522,
+        "email": "user_1@example.com",
+        "acc": 50
+    },
+    {
+        "rt": 229,
+        "email": "user_2@example.com",
+        "acc": 100
+    },
+    {
+        "rt": 396,
+        "email": "user_3@example.com",
+        "acc": 50
+    },
+    {
+        "rt": 469,
+        "email": "user_4@example.com",
+        "acc": 50
+    },
+    {
+        "rt": 740,
+        "email": "user_5@example.com",
+        "acc": 100
+    },
+    {
+        "rt": 720,
+        "email": "user_6@example.com",
+        "acc": 100
+    },
+    {
+        "rt": 796,
+        "email": "user_7@example.com",
+        "acc": 100
+    },
+    {
+        "rt": 247,
+        "email": "user_8@example.com",
+        "acc": 100
+    },
+    {
+        "rt": 910,
+        "email": "user_9@example.com",
+        "acc": 100
+    },
+    {
+        "rt": 699,
+        "email": "user_10@example.com",
+        "acc": 50
+    },
+    {
+        "rt": 373,
+        "email": "user_11@example.com",
+        "acc": 50
+    },
+    {
+        "rt": 807,
+        "email": "user_12@example.com",
+        "acc": 100
+    },
+    {
+        "rt": 602,
+        "email": "user_13@example.com",
+        "acc": 50
+    },
+    {
+        "rt": 463,
+        "email": "user_14@example.com",
+        "acc": 100
+    },
+    {
+        "rt": 206,
+        "email": "user_15@example.com",
+        "acc": 100
+    },
+    {
+        "rt": 833,
+        "email": "user_16@example.com",
+        "acc": 100
+    },
+    {
+        "rt": 828,
+        "email": "user_17@example.com",
+        "acc": 50
+    },
+    {
+        "rt": 479,
+        "email": "user_18@example.com",
+        "acc": 50
+    },
+    {
+        "rt": 806,
+        "email": "user_19@example.com",
+        "acc": 50
+    }
+]
