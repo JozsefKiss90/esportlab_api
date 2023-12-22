@@ -1,14 +1,15 @@
+from .models import Game
 from rest_framework import serializers
-from .models import ReactionTime, MyModel
-
+from .models import ReactionTime
 
 class ReactionTimeSerializer(serializers.ModelSerializer):
+    rtArray = serializers.SerializerMethodField()
     class Meta:
         model = ReactionTime
-        fields = ['rt', 'email', 'acc', 'game']
+        fields = ['rtArray', 'rt', 'email', 'acc', 'game']
 
-
-class MyModelSerializer(serializers.ModelSerializer):
+class GameSerializer(serializers.ModelSerializer):
     class Meta:
-        model = MyModel
-        fields = '__all__'
+        model = Game
+        fields = ['game', 'email', 'rank', 'best_rank', 'game_time', 'age']
+

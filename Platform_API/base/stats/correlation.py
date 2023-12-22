@@ -1,38 +1,36 @@
+import pandas as pd
 import numpy as np
-from scipy.stats import pearsonr, t
+import matplotlib.pyplot as plt
+from scipy import stats
+from statsmodels.stats.diagnostic import lilliefors
 
 
-def correlation_hardcoded(x, y):
-    mean_x = np.mean(x)
-    mean_y = np.mean(y)
+class CorrelationAnalysis:
+    def __init__(self, filepath1, filepath2):
+        self.data1 = pd.read_excel(filepath1)
+        self.data2 = pd.read_excel(filepath2)
 
-    diff_x = [x_i - mean_x for x_i in x]
-    diff_y = [y_i - mean_y for y_i in y]
+    def check_normality(self, data):
+        _, p_value = lilliefors(data)
+        return p_value > 0.05  # return True if data is normal
 
-    sum_prod = np.sum(np.array(diff_x) * np.array(diff_y))
+    def perform_correlation(self):
+        if self.check_normality(self.data1) and self.check_normality(self.data2):
+            corr_coef, p_value = stats.pearsonr(self.data1, self.data2)
+        else:
+            corr_coef, p_value = stats.spearmanr(self.data1, self.data2)
+        return corr_coef, p_value
 
-    sum_sq_x = np.sum(np.array(diff_x) ** 2)
-    sum_sq_y = np.sum(np.array(diff_y) ** 2)
-
-    denominator = np.sqrt(sum_sq_x * sum_sq_y)
-
-    pearson_corr = sum_prod / denominator
-
-    n = len(x)
-    se = np.sqrt((1 - pearson_corr ** 2) / (n - 2))
-
-    # Calculate the t-value
-    t_value = pearson_corr / se
-
-    # Calculate the degrees of freedom
-    df = n - 2
-
-    # Calculate the p-value
-    p_value = 2 * (1 - t.cdf(np.abs(t_value), df))
-
-    return pearson_corr, p_value
+    def plot_data(self):
+        plt.scatter(self.data1, self.data2)
+        plt.xlabel('Data1')
+        plt.ylabel('Data2')
+        plt.title('Scatter plot of Data1 and Data2')
+        plt.show()
 
 
-def pearson_scipy(x, y):
-    pearson_corr, _ = pearsonr(x, y)
-    return pearson_corr,_
+if __name__ == "__main__":
+    analysis = CorrelationAnalysis('../../base/files/data1.xlsx', '../../base/files/data2.xlsx')
+    corr_coef, p_value = analysis.perform_correlation()
+    print(f'Correlation Coefficient: {corr_coef}, P-value: {p_value}')
+    analysis.plot_data()
