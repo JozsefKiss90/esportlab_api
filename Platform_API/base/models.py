@@ -4,10 +4,8 @@ from django.db import models
 
 class ReactionTime(models.Model):
     rtArray = models.TextField()
-    rt = models.IntegerField()
+    rt = models.FloatField()
     email = models.EmailField()
-    acc = models.IntegerField()
-    game = models.CharField(max_length=100, null=True, blank=True)
 
     def set_rtArray(self, data):
         self.rtArray = json.dumps(data)
