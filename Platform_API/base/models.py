@@ -1,7 +1,6 @@
 import json
 from django.db import models
 
-
 class ReactionTime(models.Model):
     rtArray = models.TextField()
     rt = models.FloatField()
@@ -42,14 +41,11 @@ class HandEye(models.Model):
     def __str__(self):
         return f"HandEye (ID: {self.pk}, Email: {self.email})"
 
-import json
-from django.db import models
-
 class Performance(models.Model):
-    correct_percent = models.FloatField()
-    avg_compatible_rt = models.FloatField()
-    avg_incompatible_rt = models.FloatField()
-    simon_effect = models.FloatField()
+    correctPercent = models.FloatField()
+    avgCompatibleRT = models.FloatField()
+    avgIncompatibleRT = models.FloatField()
+    simonEffect = models.FloatField()
 
     def __str__(self):
         return f"Performance (ID: {self.pk})"
@@ -66,6 +62,6 @@ class Game(models.Model):
     game = models.CharField(max_length=255)
     email = models.EmailField()
     rank = models.CharField(max_length=255)
-    best_rank = models.CharField(max_length=255)
-    game_time = models.FloatField()
+    bestRank = models.CharField(max_length=255)
+    gameTime = models.FloatField()
     age = models.IntegerField()

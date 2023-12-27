@@ -8,5 +8,4 @@ urlpatterns = [
     path('apm/', AmpAPIView.as_view(), name='apm-api'),
     path('handeye/', HandEyeAPIView.as_view(), name='handeye-api'),
     path('simontask/', SimonTaskAPIView.as_view(), name='simontask-api'),
-
 ]

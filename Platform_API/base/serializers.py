@@ -51,7 +51,7 @@ class HandEyeSerializer(serializers.ModelSerializer):
 class PerformanceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Performance
-        fields = ['correct_percent', 'avg_compatible_rt', 'avg_incompatible_rt', 'simon_effect']
+        fields = ['correctPercent', 'avgCompatibleRT', 'avgIncompatibleRT', 'simonEffect']
 
 class SimonTaskSerializer(serializers.ModelSerializer):
     performance = PerformanceSerializer()
@@ -68,5 +68,4 @@ class SimonTaskSerializer(serializers.ModelSerializer):
 class GameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Game
-        fields = ['game', 'email', 'rank', 'best_rank', 'game_time', 'age']
-
+        fields = ['game', 'email', 'rank', 'bestRank', 'gameTime', 'age']
