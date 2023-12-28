@@ -106,6 +106,6 @@ class ReactionTimeAnalysis:
 
 
 if __name__ == "__main__":
-    analysis = ReactionTimeAnalysis('../../base/files/reaction_times.xlsx')
+    analysis = ReactionTimeAnalysis('../../files/reaction_times.xlsx')
     print(analysis.descriptive_statistics())
     analysis.plot_results_table()

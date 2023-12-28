@@ -4,9 +4,8 @@ import django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Platform_API.settings')
 django.setup()
 
-from base.stats.correlation_hardcoded import correlation_hardcoded, pearson_scipy
-from base.graphs.graph_generator import generate_graph_from_file, generate_graph, generate_graph_from_json
-from base.data.data_generator import generate_reaction_time_data, save_reaction_time_data_to_json
+from Platform_API.base.stats.tests.correlation_hardcoded import correlation_hardcoded, pearson_scipy
+
 #from base.graphs import t_test_table, cyberpunk_scatterplot, cyberpunk_graph, t_test_table_2
 #generate_graph_from_file('./base/files/reaction_times.xlsx')
 
