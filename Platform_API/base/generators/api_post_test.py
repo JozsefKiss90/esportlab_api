@@ -10,7 +10,7 @@ django.setup()
 data = [
     {"rt": random.randint(180, 220), "email": f"user{i}@example.com", "acc": 1, "game": "cs" if i < 20 else "lol"} for i in range(40)
 ]
-#response = requests.post('http://127.0.0.1:8000/api/rt/', data=json.dumps(data), headers={'Content-Type': 'application/json'})
+#response = requests.post('http://127.0.0.1:8000/api/rt/', generators=json.dumps(generators), headers={'Content-Type': 'application/json'})
 #print(response.json())
 
 ranks = ["Iron", "Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Grandmaster", "Challenger"]

@@ -33,7 +33,7 @@ def analyze_and_save_data(data, filename):
     print(f"Data saved to {filename}")
 
 def main(api_url, output_filename):
-    # Fetching the data
+    # Fetching the generators
     df = fetch_data(api_url)
 
     # Group by email and calculate the mean memorySpan for users with multiple entries

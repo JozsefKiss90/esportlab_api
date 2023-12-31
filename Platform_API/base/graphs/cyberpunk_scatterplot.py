@@ -22,10 +22,10 @@ pink_data = np.random.multivariate_normal(mean_pink, cov_pink, 100).T
 
 fig, ax = plt.subplots()
 
-# Plot teal/cyan data points without glow effect and unconnected
+# Plot teal/cyan generators points without glow effect and unconnected
 ax.scatter(teal_cyan_data[0], teal_cyan_data[1], color='#08F7FE', marker='o', s=50, zorder=2)
 
-# Plot pink data points without glow effect and unconnected
+# Plot pink generators points without glow effect and unconnected
 ax.scatter(pink_data[0], pink_data[1], color='#FE53BB', marker='s', s=50, zorder=2)
 
 ax.grid(color='#2A3459')

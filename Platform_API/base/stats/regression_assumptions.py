@@ -7,13 +7,13 @@ import matplotlib.pyplot as plt
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 
 # Load the dataset
-file_path = './merged_dataset.csv'
+file_path = 'data/merged_dataset.csv'
 data = pd.read_csv(file_path)
 
 # Data Cleaning: Removing the 'correctPercent' column and dropping rows with any missing values.
 data_cleaned = data.drop(columns=['correctPercent', 'email']).dropna()
 
-# Standardizing the data (excluding the dependent variable 'apm_performance')
+# Standardizing the generators (excluding the dependent variable 'apm_performance')
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(data_cleaned.drop('apm_performance', axis=1))
 y = data_cleaned['apm_performance']

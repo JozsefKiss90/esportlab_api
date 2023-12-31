@@ -24,7 +24,7 @@ pink_data = np.random.multivariate_normal(reaction_time_mean_pink, cov_pink, 100
 
 fig, ax = plt.subplots()
 
-# Scatter the data points
+# Scatter the generators points
 ax.scatter(teal_cyan_data[0], teal_cyan_data[1], color='#08F7FE', marker='o', s=50, zorder=2)
 ax.scatter(pink_data[0], pink_data[1], color='#FE53BB', marker='s', s=50, zorder=2)
 

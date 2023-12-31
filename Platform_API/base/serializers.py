@@ -5,12 +5,12 @@ from .models import ReactionTime
 
 class ReactionTimeSerializer(serializers.ModelSerializer):
     rtArray = serializers.ListField(
-        child=serializers.FloatField(),  # Specify the type of data in the list
+        child=serializers.FloatField(),  # Specify the type of generators in the list
         required=False  # Make it optional or ensure your API always provides it
     )
 
     def create(self, validated_data):
-        # Handle creating a ReactionTime instance from validated data
+        # Handle creating a ReactionTime instance from validated generators
         # Use your set_rtArray method here if necessary
         return ReactionTime.objects.create(**validated_data)
 
@@ -36,7 +36,7 @@ class AmpSerializer(serializers.ModelSerializer):
 
 class HandEyeSerializer(serializers.ModelSerializer):
     performance = serializers.ListField(
-        child=serializers.FloatField(),  # Specify the type of data in the list
+        child=serializers.FloatField(),  # Specify the type of generators in the list
         required=False  # Make it optional or ensure your API always provides it
     )
     def create(self, validated_data):

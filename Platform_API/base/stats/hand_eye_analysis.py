@@ -10,16 +10,16 @@ def fetch_data(api_url):
     if response.status_code == 200:
         return pd.DataFrame(response.json())
     else:
-        print(f"Failed to fetch data: Status code {response.status_code}")
+        print(f"Failed to fetch generators: Status code {response.status_code}")
         return pd.DataFrame()
 
 def filter_outliers(data):
     return data[np.abs(stats.zscore(data)) < 3]
 
 def process_handeye_data(df):
-    # Separate data into two experiments based on length of performance array
-    exp1 = df[df['performance'].map(len) == 12]  # Experiment 1 has 12 data points
-    exp2 = df[df['performance'].map(len) == 5]   # Experiment 2 has 5 data points
+    # Separate generators into two experiments based on length of performance array
+    exp1 = df[df['performance'].map(len) == 12]  # Experiment 1 has 12 generators points
+    exp2 = df[df['performance'].map(len) == 5]   # Experiment 2 has 5 generators points
 
     # Calculate average performance for each user in each experiment
     exp1_avg = exp1.groupby('email')['performance'].apply(lambda x: np.mean([filter_outliers(np.array(item)) for item in x])).reset_index()

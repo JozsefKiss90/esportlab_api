@@ -1,6 +1,6 @@
 import requests
 
-AUTH_URL = 'http://localhost:3000/api/external_auth'  # Adjusted to the new endpoint
+AUTH_URL = 'http://localhost:3000/api/external_auth'
 
 def login_and_retrieve_token(email, password):
     credentials = {'email': email, 'password': password}

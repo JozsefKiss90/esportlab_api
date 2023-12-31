@@ -10,7 +10,7 @@ def fetch_data(api_url):
     if response.status_code == 200:
         # Manually parse the JSON response
         data = response.json()
-        # Flatten the data and extract performance and email
+        # Flatten the generators and extract performance and email
         flattened_data = []
         for entry in data:
             performance = entry['performance']
@@ -47,7 +47,7 @@ def analyze_and_save_data(data, filename):
     print(f"Data saved to {filename}")
 
 def main(api_url, output_filename):
-    # Fetching and preparing the data
+    # Fetching and preparing the generators
     df = fetch_data(api_url)
     print(df.head())  # Debug: print the first few rows of the DataFrame to check its structure
 

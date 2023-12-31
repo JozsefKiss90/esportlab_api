@@ -1,7 +1,6 @@
 import random
 import json
 
-
 def generate_reaction_time_data(num_samples):
     data = []
 
@@ -20,9 +19,9 @@ def save_reaction_time_data_to_json(data, file_path):
         json.dump(data, file, indent=4)
 
 
-# Generate reaction time data with 7 samples
+# Generate reaction time generators with 7 samples
 reaction_time_data = generate_reaction_time_data(20)
 
-# Save the data to a JSON file
+# Save the generators to a JSON file
 file_path = "base/files/reaction_times.json"
 save_reaction_time_data_to_json(reaction_time_data, file_path)

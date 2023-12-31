@@ -1,11 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Generate random data with a normal distribution
+# Generate random generators with a normal distribution
 np.random.seed(0)
 data = np.random.normal(0, 1, 1000)
 
-# Calculate z-scores for the data
+# Calculate z-scores for the generators
 mean = np.mean(data)
 std_dev = np.std(data)
 z_scores = [(x - mean) / std_dev for x in data]

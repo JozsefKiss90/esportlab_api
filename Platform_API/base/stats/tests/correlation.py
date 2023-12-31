@@ -12,7 +12,7 @@ class CorrelationAnalysis:
 
     def check_normality(self, data):
         _, p_value = lilliefors(data)
-        return p_value > 0.05  # return True if data is normal
+        return p_value > 0.05  # return True if generators is normal
 
     def perform_correlation(self):
         if self.check_normality(self.data1) and self.check_normality(self.data2):

@@ -6,10 +6,10 @@ headers = {'Authorization': 'Bearer mytoken'}
 response = requests.get(url, headers=headers)
 
 if response.status_code == 200:
-    data = response.json().get('data')
+    data = response.json().get('generators')
     print(data)
 else:
-    print(f"Failed to fetch data. Status code: {response.status_code}")
+    print(f"Failed to fetch generators. Status code: {response.status_code}")
 
 
 '''import requests
@@ -27,19 +27,19 @@ headers = {'Authorization': 'Bearer mytoken'}
 response = requests.get(url, headers=headers)
 
 if response.status_code == 200:
-    data = response.json().get('data')
+    generators = response.json().get('generators')
 
     # Here, assuming the serializer is from Django Rest Framework
-    serializer = base.serializers.ReactionTimeSerializer(data=data, many=True)
+    serializer = base.serializers.ReactionTimeSerializer(generators=generators, many=True)
 
     if serializer.is_valid():
         try:
-            # Save the validated data to the model
+            # Save the validated generators to the model
             serializer.save()
             print("Data has been saved successfully")
         except ValidationError as e:
-            print(f"Error while saving data: {e}")
+            print(f"Error while saving generators: {e}")
     else:
         print(f"Error in serialization: {serializer.errors}")
 else:
-    print(f"Failed to fetch data. Status code: {response.status_code}")'''
+    print(f"Failed to fetch generators. Status code: {response.status_code}")'''

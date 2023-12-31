@@ -7,6 +7,12 @@ from rest_framework.response import Response
 from rest_framework import status
 import requests
 from Platform_API.Auth.login_get_token import login_and_retrieve_token
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+email = os.getenv('AUTH_EMAIL')
+password = os.getenv('AUTH_PASSWORD')
 
 class ReactionTimeViewSet(viewsets.ModelViewSet):
     queryset = ReactionTime.objects.all()
@@ -14,9 +20,6 @@ class ReactionTimeViewSet(viewsets.ModelViewSet):
 
 class ReactionTimeAPIView(APIView):
     def get(self, request):
-        email = 'user@gmail.com'
-        password = 'user123456'
-
         token = login_and_retrieve_token(email, password)
         url = 'http://localhost:3000/api/rt/'
         headers = {'Authorization': f'Bearer {token}'}
@@ -25,7 +28,7 @@ class ReactionTimeAPIView(APIView):
 
         if response.status_code == 200:
 
-            data = response.json().get('data')
+            data = response.json().get('generators')
             print(data)
             serializer = ReactionTimeSerializer(data=data, many=True)
 
@@ -48,8 +51,6 @@ class ReactionTimeAPIView(APIView):
 
 class MemoryAPIView(APIView):
     def get(self, request):
-        email = 'user@gmail.com'
-        password = 'user123456'
 
         token = login_and_retrieve_token(email, password)
         url = 'http://localhost:3000/api/memory/'
@@ -58,7 +59,7 @@ class MemoryAPIView(APIView):
         response = requests.get(url, headers=headers)
 
         if response.status_code == 200:
-            data = response.json().get('data')
+            data = response.json().get('generators')
             serializer = MemorySerializer(data=data, many=True)
 
             if serializer.is_valid():
@@ -70,16 +71,13 @@ class MemoryAPIView(APIView):
 
 class AmpAPIView(APIView):
     def get(self, request):
-        email = 'user@gmail.com'
-        password = 'user123456'
-
         token = login_and_retrieve_token(email, password)
         url = 'http://localhost:3000/api/apm/'  # Adjust the endpoint as needed
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.get(url, headers=headers)
 
         if response.status_code == 200:
-            data = response.json().get('data')
+            data = response.json().get('generators')
             serializer = AmpSerializer(data=data, many=True)
 
             if serializer.is_valid():
@@ -91,9 +89,6 @@ class AmpAPIView(APIView):
 
 class HandEyeAPIView(APIView):
     def get(self, request):
-        email = 'user@gmail.com'
-        password = 'user123456'
-
         token = login_and_retrieve_token(email, password)
         url = 'http://localhost:3000/api/handeye/'  # Adjust the endpoint as needed
         headers = {'Authorization': f'Bearer {token}'}
@@ -101,7 +96,7 @@ class HandEyeAPIView(APIView):
         response = requests.get(url, headers=headers)
 
         if response.status_code == 200:
-            data = response.json().get('data')
+            data = response.json().get('generators')
             serializer = HandEyeSerializer(data=data, many=True)
 
             if serializer.is_valid():
@@ -113,9 +108,6 @@ class HandEyeAPIView(APIView):
 
 class SimonTaskAPIView(APIView):
     def get(self, request):
-        email = 'user@gmail.com'
-        password = 'user123456'
-
         token = login_and_retrieve_token(email, password)
         headers = {'Authorization': f'Bearer {token}'}
         url = 'http://localhost:3000/api/simonTask'
@@ -123,7 +115,7 @@ class SimonTaskAPIView(APIView):
         response = requests.get(url, headers=headers)
 
         if response.status_code == 200:
-            data = response.json().get('data')
+            data = response.json().get('generators')
             serializer = SimonTaskSerializer(data=data, many=True)
 
             if serializer.is_valid():
@@ -134,9 +126,6 @@ class SimonTaskAPIView(APIView):
             return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 class GameAPIView(APIView):
     def get(self, request):
-        email = 'user@gmail.com'
-        password = 'user123456'
-
         token = login_and_retrieve_token(email, password)
         headers = {'Authorization': f'Bearer {token}'}
         url = 'http://localhost:3000/api/gameStats/'
@@ -144,7 +133,7 @@ class GameAPIView(APIView):
         response = requests.get(url, headers=headers)
 
         if response.status_code == 200:
-            data = response.json().get('data')
+            data = response.json().get('generators')
             serializer = GameSerializer(data=data, many=True)
             if serializer.is_valid():
                 return Response(serializer.data, status=status.HTTP_200_OK)
@@ -161,13 +150,13 @@ def fetch_reaction_times_data():
     """ 
        if response.status_code == 200:
 
-            data = response.json().get('data')
+            generators = response.json().get('generators')
 
-            serializer = ReactionTimeSerializer(data=data, many=True)
+            serializer = ReactionTimeSerializer(generators=generators, many=True)
 
-            #data_collector.save_data_to_excel(data, 'base/files/reaction_times.xlsx')
+            #data_collector.save_data_to_excel(generators, 'base/files/reaction_times.xlsx')
             if serializer.is_valid():
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                return Response(serializer.generators, status=status.HTTP_200_OK)
             else:
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         else:

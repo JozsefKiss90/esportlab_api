@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Example data
-data = np.random.randn(1000)  # Random normal distribution data
+# Example generators
+data = np.random.randn(1000)  # Random normal distribution generators
 
 # Create histogram
 plt.hist(data, bins=30)

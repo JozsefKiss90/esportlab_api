@@ -27,7 +27,7 @@ t_stat, p_value = ttest_ind(teal_cyan_data[0], pink_data[0])
 std_dev_tc = np.std(teal_cyan_data[0])
 std_dev_pink = np.std(pink_data[0])
 
-# Create table data
+# Create table generators
 table_data = [
     ['', 'Mean', 'Std Dev'],
     ['Team One', f'{np.mean(teal_cyan_data[0]):.2f}', f'{std_dev_tc:.2f}'],

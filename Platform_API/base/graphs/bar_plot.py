@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-# Example data
+# Example generators
 categories = ['Category A', 'Category B', 'Category C']
 frequency = [10, 15, 7]
 

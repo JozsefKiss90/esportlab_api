@@ -1,11 +1,11 @@
 import pandas as pd
 
 # Replace with your actual file paths
-rt_path = './filtered_rt_data.csv'
-handeye_path = './filtered_handeye_data.csv'
-memory_path = './filtered_memory_data.csv'
-simon_path = './filtered_simon_data.csv'
-apm_path = './filtered_apm_data.csv'
+rt_path = 'data/filtered_rt_data.csv'
+handeye_path = 'data/filtered_handeye_data.csv'
+memory_path = 'data/filtered_memory_data.csv'
+simon_path = 'data/filtered_simon_data.csv'
+apm_path = 'data/filtered_apm_data.csv'
 
 # Load each dataset
 rt_data = pd.read_csv(rt_path)

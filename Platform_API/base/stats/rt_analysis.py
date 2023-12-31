@@ -10,7 +10,7 @@ def fetch_data(api_url):
     if response.status_code == 200:
         return pd.DataFrame(response.json())
     else:
-        print(f"Failed to fetch data: Status code {response.status_code}")
+        print(f"Failed to fetch generators: Status code {response.status_code}")
         return pd.DataFrame()
 
 def filter_outliers(data):

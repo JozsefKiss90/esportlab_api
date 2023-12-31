@@ -24,7 +24,7 @@ fig, ax = plt.subplots()
 
 df.plot(marker='o', color=colors, ax=ax)
 
-# Redraw the data with low alpha and slightly increased linewidth:
+# Redraw the generators with low alpha and slightly increased linewidth:
 n_shades = 10
 diff_linewidth = 1.05
 alpha_value = 0.3 / n_shades
