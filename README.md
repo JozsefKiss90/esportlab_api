@@ -6,7 +6,7 @@ The Esport Lab Benchmarking API is a interface designed to work alongside the [E
 ## Purpose
 Esport Lab is dedicated to advancing the field of cognitive research through gaming and psychological tasks. With the Esport Lab Benchmarking API, we're one step closer to understanding the details of the human mind in gaming contexts. The Benchmarking API plays a crucial role in this mission by:
 
-- Integrating observations from different cognitive abilities into a unified and engaging task.
+- Integrating observations from different cognitive abilities into unified and engaging tasks.
 - Collecting and structuring behavioral test data in a well-defined manner, ensuring reliability and accuracy.
 - Providing endpoints for statistical analysis, enabling to derive psychologically meaningful conclusions from the data.
 
