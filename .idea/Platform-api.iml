@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/env" />
       <excludeFolder url="file://$MODULE_DIR$/Platform_API/.pytest_cache/v" />
+      <excludeFolder url="file://$MODULE_DIR$/Platform_API/base/stats/data" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.9 (Platform-api)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
