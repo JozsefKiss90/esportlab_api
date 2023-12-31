@@ -8,7 +8,7 @@ Esport Lab is dedicated to advancing the field of cognitive research through gam
 
 - Integrating observations from different cognitive abilities into a unified and engaging task.
 - Collecting and structuring behavioral test data in a well-defined manner, ensuring reliability and accuracy.
-- Providing endpoints for statistical analysis, enabling researchers and psychologists to derive meaningful conclusions from the data.
+- Providing endpoints for statistical analysis, enabling to derive psychologically meaningful conclusions from the data.
 
 ## Technical Details
 The Esport Lab Benchmarking API is developed using a robust stack of technologies, ensuring flexibility, reliability, and ease of use:
